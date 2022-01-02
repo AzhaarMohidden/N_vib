@@ -1,8 +1,8 @@
 
-int Pot_val;
+int Pot_val; //Potentiometer value str integer
 
-int Sol_1 = 4;
-int Sol_1_delay = 0;
+int Sol_1 = 4; //pinout set to digital I/O 4
+int Sol_1_delay = 0; 
 
 bool Sol_1_state = false;
 
@@ -13,15 +13,13 @@ unsigned long Sol_1_time = 0;
 void setup() {
   pinMode(Sol_1, OUTPUT);
   Serial.begin(115200);
-
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   C_time = millis();
-  Pot_val = analogRead(0)/10;
-//  printer();
+  Pot_val = analogRead(0)/10; // Potentiometer read pin connected to A0
   Solenoid_1();  
+//  printer(); // Enable only for DEBUG
 }
 
 void Solenoid_1(){
